@@ -1,0 +1,15 @@
+(executable (name b) (libraries unix))
+
+; With (lang dune 2.0)
+
+(rule
+ (alias runtest)
+ (locks /foo)
+ (action (run %{exe:b.exe})))
+
+; With (lang dune 1.11)
+
+; (alias
+;  (name runtest)
+;  (locks /foo)
+;  (action (run %{exe:b.exe})))

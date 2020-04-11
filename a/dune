@@ -1,0 +1,11 @@
+(executable (name a) (libraries unix))
+
+(rule
+ (alias runtest)
+ (locks /foo)
+ (action (run %{exe:a.exe})))
+
+; (alias
+;  (name runtest)
+;  (locks /foo)
+;  (action (run %{exe:a.exe})))
